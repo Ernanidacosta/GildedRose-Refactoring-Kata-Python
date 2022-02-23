@@ -1,2 +1,7 @@
 __pycache__
 .pytest_cache
+*.pyc
+.cache
+.coverage
+.idea/
+*.iml
