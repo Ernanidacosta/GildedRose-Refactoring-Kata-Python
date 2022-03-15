@@ -24,14 +24,15 @@ class GildedRose(object):
                 continue
 
             else:
-                item.quality -= 1
-                item.quality = max(item.quality, 0)
+                self.common_item(item)
 
-                item.sell_in -= 1
-
-                if item.sell_in < 0:
-                    item.quality -= 1
-                    item.quality = max(item.quality, 0)
+    def common_item(self, item):
+        item.quality -= 1
+        item.quality = max(item.quality, 0)
+        item.sell_in -= 1
+        if item.sell_in < 0:
+            item.quality -= 1
+            item.quality = max(item.quality, 0)
 
     def fragant_method(self, item):
         item.quality += 1
