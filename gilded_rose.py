@@ -5,23 +5,21 @@ class GildedRose(object):
     def update_quality(self):
         for item in self.items:
 
-            if item.name == 'Sulfuras, Hand of Ragnaros':
+            if item.name == "Sulfuras, Hand of Ragnaros":
                 item.quality = 80
                 item.sell_in = item.sell_in - 1
-                continue
-            elif item.name == 'Aged Brie':
-                self.fragant_method(item)
-                continue
 
-            elif 'Conjured' in item.name:
+            elif item.name == "Aged Brie":
+                self.fragant_method(item)
+
+            elif "Conjured" in item.name:
                 item.quality -= 2
                 item.sell_in -= 1
                 if item.sell_in < 0:
                     item.quality -= 2
 
-            elif item.name == 'Backstage passes to a TAFKAL80ETC concert':
+            elif item.name == "Backstage passes to a TAFKAL80ETC concert":
                 self.exclusive_method(item)
-                continue
 
             else:
                 self.common_item(item)
@@ -61,4 +59,4 @@ class Item:
         self.quality = quality
 
     def __repr__(self):
-        return f'{self.name}, {self.sell_in}, {self.quality}'
+        return f"{self.name}, {self.sell_in}, {self.quality}"
